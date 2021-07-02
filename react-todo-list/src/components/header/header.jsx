@@ -7,6 +7,7 @@ function Header({addItem}) {
         <input className="input" type="text" />
         <button onClick={addItem}>+</button>
         <ul className="container"></ul>
+       
     </>)
 }
 

@@ -1,28 +1,18 @@
 
-import './App.css';
-import Header from './header/header.jsx';
-import Notice from './notice/notice.jsx';
+import './app.css';
+import Header from './components/header/header.jsx';
+import Lists from './components/list/lists';
 
 function App() {
 
-  const addItem = () => {
-    
-    const ul = document.createElement('ul');
-    ul.setAttribute('className', "container");
-    const li = document.createElement('li');
-    li.setAttribute('className', "top--list");
-    ul.appendChild(li);
+ 
 
-
-    console.log('props!');
-  }
-
-  return <>
-    <Header addItem={addItem}/>
-    <Notice/>
-  </>
+  return (
+   <>
+    <Header/>
+    <Lists/>
+   </>)
 }
-
 
 
 export default App;
