@@ -1,18 +1,18 @@
-
+import React, { Component } from 'react';
 import './app.css';
-import Header from './components/header/header.jsx';
 import Lists from './components/list/lists';
 
-function App() {
-
- 
-
+class App extends Component {
+  
+  
+  
+  render() {
   return (
    <>
-    <Header/>
-    <Lists/>
+    
+    <Lists />
    </>)
+  };
 }
-
 
 export default App;

@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import List from './list';
+import AddForm from '../add/add-form';
 
 class Lists extends Component {
-    state = {
-        lists : [
-            {list:"coding"}, {list: "playing"}, {list:"eating"}
-        ],
-    };
+    
 
+    handleAdd = () => {
+        this.props.onAdd();
+
+    }
     render() {
         return(
+            <>
+            <AddForm onAdd={this.handleAdd}/>
             <ul>
                 {
-                    this.state.lists.map( list => <List list={list}/>)
+                   this.props.lists.map()
                 }
             </ul>
+            </>
         );
     }
 }
