@@ -4,10 +4,7 @@ import Lists from "./components/lists";
 
 class App extends Component {
   state = {
-    lists: [
-      { id: 1, name: "coding" },
-      { id: 2, name: "coding" },
-    ],
+    lists: [{ id: 1, name: "" }],
   };
 
   handleAdd = (name) => {
@@ -16,7 +13,17 @@ class App extends Component {
   };
 
   render() {
-    return <Lists lists={this.state.lists} onAdd={this.handleAdd} />;
+    return (
+      <section>
+        <div className="container">
+          <div className="header">
+            <i className="far fa-calendar-minus"></i>
+            <i className="fas fa-ellipsis-h"></i>
+          </div>
+          <Lists lists={this.state.lists} onAdd={this.handleAdd} />
+        </div>
+      </section>
+    );
   }
 }
 

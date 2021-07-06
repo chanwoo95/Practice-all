@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./list.css";
 
 class List extends Component {
   render() {
@@ -6,10 +7,11 @@ class List extends Component {
 
     return (
       <>
-        <h2>추가된 목록</h2>
         <li>
           <span className="list-name">{name}</span>
-          <button className="list-button">-</button>
+          <button className="list-button">
+            <i className="far fa-trash-alt"></i>
+          </button>
         </li>
       </>
     );

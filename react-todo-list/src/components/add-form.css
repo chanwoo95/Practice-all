@@ -1,0 +1,12 @@
+.add-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-input {
+  padding: 4px;
+}
+
+.add-button {
+  color: #f9b16e;
+}

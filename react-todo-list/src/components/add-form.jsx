@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./add-form.css";
 class AddForm extends Component {
   inputRef = React.createRef();
 
@@ -13,9 +13,16 @@ class AddForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <input ref={this.inputRef} type="text" />
-        <button>+</button>
+      <form className="add-form" onSubmit={this.onSubmit}>
+        <input
+          ref={this.inputRef}
+          className="add-input"
+          type="text"
+          placeholder="할 일을 입력하세요."
+        />
+        <button className="add-button">
+          <i className="fas fa-plus"></i>
+        </button>
       </form>
     );
   }
