@@ -4,9 +4,13 @@
 }
 
 .add-input {
-  padding: 4px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .add-button {
+  margin-top: 10px;
   color: #f9b16e;
 }

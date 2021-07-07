@@ -8,6 +8,9 @@ class Lists extends Component {
     this.props.onAdd(name);
   };
 
+  handleDelete = (list) => {
+    this.props.onDelete(list);
+  };
   render() {
     console.log(this.props.lists);
     return (
@@ -17,7 +20,7 @@ class Lists extends Component {
         <h2 className="add-title">추가된 목록</h2>
         <ul>
           {this.props.lists.map((list) => (
-            <List key={list.id} list={list} />
+            <List key={list.id} list={list} onDelete={this.handleDelete} />
           ))}
         </ul>
       </>

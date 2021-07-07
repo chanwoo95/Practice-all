@@ -1,0 +1,13 @@
+.count {
+  font-weight: bold;
+  position: relative;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #ebdedb;
+  padding: 30px;
+  width: 310px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
