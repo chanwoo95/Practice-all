@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./list.css";
 
 class List extends Component {
-  onClick = (list) => {
-    this.props.onDelete(list);
+  handleDelete = () => {
+    this.props.onDelete(this.props.list);
   };
 
   render() {
@@ -13,7 +13,7 @@ class List extends Component {
       <>
         <li className="list">
           <span className="list-name">{name}</span>
-          <button className="list-button" onClick={this.onClick}>
+          <button className="list-button" onClick={this.handleDelete}>
             <i className="far fa-trash-alt"></i>
           </button>
         </li>

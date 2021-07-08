@@ -8,7 +8,6 @@ class AddForm extends Component {
     const name = this.inputRef.current.value;
     name && this.props.onAdd(name);
     this.inputRef.current.value = "";
-    console.log(name);
   };
 
   render() {
