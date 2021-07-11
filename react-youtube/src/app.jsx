@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./app.css";
 import VideoList from "./components/video_list/video_list";
 
-const App = () => {
+function App() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -21,6 +21,6 @@ const App = () => {
   }, []);
 
   return <VideoList videos={videos} />;
-};
+}
 
 export default App;
