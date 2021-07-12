@@ -2,6 +2,10 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  padding: 1.2rem;
+}
+
 li {
   list-style: none;
 }
