@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  background-color: black;
+  height: 4rem;
+  padding: 0.5em 1.2em;
+  color: white;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.name {
+  margin-left: 0.5em;
+}
+
+.input {
+  flex-basis: 100%;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.button {
+  background-color: lightgrey;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search {
+  height: 100%;
+  padding: 0.5em 0.2em;
+}
