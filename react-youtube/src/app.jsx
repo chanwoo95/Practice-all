@@ -21,9 +21,13 @@ function App() {
       .catch((error) => console.log("error", error));
   }, []);
 
+  const video = (video) => {
+    <VideoList videos={video} />;
+  };
+
   return (
     <div className={styles.app}>
-      <SearchHeader />
+      <SearchHeader video={video} />
       <VideoList videos={videos} />;
     </div>
   );
