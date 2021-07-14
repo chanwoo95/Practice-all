@@ -13,11 +13,14 @@ function App() {
     };
 
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyBpXbgoPSkptnIkOZJHPYWzn9L-yEUKuus`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${key}`,
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => setVideos(result.items))
+      .then((result) =>
+        result.items.map((item) => ({ ...item, id: item.id.videoId }))
+      )
+      .then((items) => setVideos(items))
       .catch((error) => console.log("error", error));
   };
 
@@ -28,7 +31,7 @@ function App() {
     };
 
     fetch(
-      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyBpXbgoPSkptnIkOZJHPYWzn9L-yEUKuus",
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${key}`,
       requestOptions
     )
       .then((response) => response.json())
