@@ -1,18 +1,21 @@
 import React from "react";
 
-const VideoDetail = () => {
-  <div>
-    <iframe
-      title="video"
-      id="ytplayer"
-      type="text/html"
-      width="720"
-      height="405"
-      src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
-  </div>;
-};
+const VideoDetail = ({ video }) => (
+  <>
+    <div>
+      <iframe
+        title="video"
+        id="ytplayer"
+        type="text/html"
+        width="720"
+        height="405"
+        src={`https://www.youtube.com/embed/${video.id}`}
+        frameBorder="0"
+        allowFullScreen
+      ></iframe>
+    </div>
+    <div>{console.log(video)}</div>
+  </>
+);
 
 export default VideoDetail;
