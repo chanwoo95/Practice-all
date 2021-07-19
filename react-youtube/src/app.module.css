@@ -6,10 +6,14 @@ body {
   box-sizing: border-box;
 }
 
-ul {
-  padding: 1.2rem;
+.content {
+  display: flex;
 }
 
-li {
-  list-style: none;
+.video {
+  flex: 1 1 70%;
+}
+
+.list {
+  flex: 1 1 30%;
 }
