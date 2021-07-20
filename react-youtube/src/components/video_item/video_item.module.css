@@ -2,6 +2,14 @@
   width: 50%;
 }
 
+.container.gird {
+  display: grid;
+}
+
+.container_list {
+  display: list-item;
+}
+
 .video {
   display: flex;
   align-items: center;

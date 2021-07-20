@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./video_detail.module";
+import styles from "./video_detail.module.css";
 
 const VideoDetail = ({ video }) => (
   <section className={styles.section}>
