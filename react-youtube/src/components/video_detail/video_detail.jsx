@@ -1,8 +1,7 @@
 import React from "react";
-import styles from './video_detail.module'
+import styles from "./video_detail.module";
 
-const VideoDetail = ({ video, display }) => (
-  { `${display === 'gird' ?}` }
+const VideoDetail = ({ video }) => (
   <section className={styles.section}>
     <iframe
       title="video"

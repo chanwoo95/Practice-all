@@ -6,10 +6,10 @@ import VideoDetail from "./components/video_detail/video_detail";
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
-  const [selectedVideos, setSelectedVideos] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const selectVideos = (video) => {
-    setSelectedVideos(video);
+  const selectVideo = (video) => {
+    setSelectedVideo(video);
   };
 
   const search = (query) => {
@@ -29,12 +29,18 @@ function App({ youtube }) {
       <SearchHeader onSearch={search} />
       <div className={styles.content}>
         <div className={styles.video}>
-          {selectedVideos && (
-            <VideoDetail video={selectedVideos} display={"grid"} />
+          {selectedVideo && (
+            <div className={styles.detail}>
+              <VideoDetail video={selectedVideo} />
+            </div>
           )}
         </div>
         <div className={styles.list}>
-          <VideoList videos={videos} onVideoClick={selectVideos} />
+          <VideoList
+            videos={videos}
+            onVideoClick={selectVideo}
+            display={selectedVideo ? "list" : "grid"}
+          />
         </div>
       </div>
     </div>
