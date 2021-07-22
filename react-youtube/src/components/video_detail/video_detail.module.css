@@ -1,0 +1,8 @@
+.section {
+  margin-top: 10px;
+  width: 800px;
+}
+
+.pre {
+  white-space: pre-wrap;
+}

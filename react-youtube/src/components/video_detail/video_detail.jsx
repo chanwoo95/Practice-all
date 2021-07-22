@@ -5,16 +5,16 @@ const VideoDetail = ({ video }) => (
   <section className={styles.section}>
     <iframe
       title="video"
-      id="ytplayer"
+      className={styles.video}
       type="text/html"
-      width="720"
-      height="405"
+      width="800px"
+      height="500px"
       src={`https://www.youtube.com/embed/${video.id}`}
       frameBorder="0"
       allowFullScreen
     ></iframe>
     <h2>{video.snippet.title}</h2>
-    <pre>{video.snippet.description}</pre>
+    <pre className={styles.pre}>{video.snippet.description}</pre>
   </section>
 );
 

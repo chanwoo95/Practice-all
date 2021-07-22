@@ -1,16 +1,18 @@
 .container {
+  padding: 0.2em;
+}
+
+.container.grid {
   width: 50%;
 }
 
-.container.gird {
-  display: grid;
-}
-
-.container_list {
-  display: list-item;
+.container.list {
+  width: 100%;
 }
 
 .video {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   border: 1px solid lightgrey;
