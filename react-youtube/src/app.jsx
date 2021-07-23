@@ -4,7 +4,7 @@ import VideoList from "./components/video_list/video_list";
 import SearchHeader from "./components/search_header/search_header";
 import VideoDetail from "./components/video_detail/video_detail";
 
-function App({ youtube }) {
+const App = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -48,6 +48,6 @@ function App({ youtube }) {
       </div>
     </div>
   );
-}
+};
 
 export default App;
