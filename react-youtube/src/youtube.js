@@ -1,11 +1,6 @@
-import axios from "axios";
-
 class Youtube {
-  constructor(key) {
-    this.youtube = axios.create({
-      baseURL: "https://www.googleapis.com/youtube/v3/",
-      params: { key: key },
-    });
+  constructor(httpClient) {
+    this.youtube = httpClient;
     // this.key = key;
     // this.getRequestOptions = {
     //   method: "GET",
@@ -14,12 +9,12 @@ class Youtube {
   }
 
   async search(query) {
-    const response = this.youtube.get("search", {
+    const response = await this.youtube.get("search", {
       params: {
         part: "snippet",
         maxResults: 25,
-        type: "video",
         q: query,
+        type: "video",
       },
     });
 
@@ -27,16 +22,16 @@ class Youtube {
       ...item,
       id: item.id.videoId,
     }));
-    // const response = await fetch(
-    //   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${this.key}`,
-    //   this.getRequestOptions
-    // );
-    // const result = await response.json();
-    // return result.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
+  // const response = await fetch(
+  //   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${this.key}`,
+  //   this.getRequestOptions
+  // );
+  // const result = await response.json();
+  // return result.items.map((item) => ({ ...item, id: item.id.videoId }));
 
   async mostPopular() {
-    const response = this.youtube.get("videos", {
+    const response = await this.youtube.get("videos", {
       params: {
         part: "snippet",
         chart: "mostPopular",
@@ -45,13 +40,13 @@ class Youtube {
     });
 
     return response.data.items;
-    // const response = await fetch(
-    //   `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
-    //   this.getRequestOptions
-    // );
-    // const result = await response.json();
-    // return result.items;
   }
+  // const response = await fetch(
+  //   `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
+  //   this.getRequestOptions
+  // );
+  // const result = await response.json();
+  // return result.items;
 }
 
 export default Youtube;
