@@ -1,33 +1,34 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Home from "./components/home";
+import About from "./components/about";
+import Contact from "./components/contact";
 
-export default function App() {
+function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/list">list</Link>
-            </li>
-            <li>
-              <Link to="/board">board</Link>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to="/">home</Link>
+          </li>
+          <li>
+            <Link to="/about">about</Link>
+          </li>
+          <li>
+            <Link to="/contact">contact</Link>
+          </li>
+        </ul>
 
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/list">
-            <List />
+          <Route path="/about">
+            <About />
           </Route>
-          <Route path="/board">
-            <Board />
+          <Route path="/contact">
+            <Contact />
           </Route>
         </Switch>
       </div>
@@ -35,14 +36,4 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function List() {
-  return <h2>List</h2>;
-}
-
-function Board() {
-  return <h2>Board</h2>;
-}
+export default App;
