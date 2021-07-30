@@ -1,0 +1,73 @@
+@value makerGreen from '../common/colors.css';
+@value makerWhite from '../common/colors.css';
+@value makerWheat from '../common/colors.css';
+@value makerBlack from '../common/colors.css';
+
+.section {
+  border: 1px solid makerBlack;
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header {
+  background-color: makerGreen;
+  color: makerWhite;
+  padding: 0.7em;
+}
+
+.logo {
+  width: 4em;
+}
+
+h2 {
+  margin: 0;
+}
+
+.main {
+  height: 240px;
+}
+
+.main_title {
+  padding: 1.11em 0;
+  font-size: 1.8rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_button {
+  cursor: pointer;
+  border: 2px solid makerBlack;
+  border-radius: 20px;
+  padding: 1.2em;
+  margin: 0.3em;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.login_button:hover {
+  background-color: makerWheat;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: makerGreen;
+  height: 60px;
+  color: makerWhite;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
