@@ -1,9 +1,9 @@
 import React from "react";
 
-function Header(onLogout) {
+function Header() {
   return (
     <header>
-      {onLogout && <button onClick={onLogout}>Logout</button>}
+      {/* {onLogout && <button>Logout</button>} */}
       <img src="/images/logo.png" alt="logo" />
       <h1>Business card maker</h1>
     </header>

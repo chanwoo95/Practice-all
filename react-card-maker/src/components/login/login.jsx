@@ -1,16 +1,29 @@
 import React from "react";
+import Header from "../header/header";
+import Footer from "../footer/footer";
 
-function Login() {
+const Login = ({ authService }) => {
+  const onLogin = (event) => {
+    authService.login(event.currentTarget.textContent).then(console.log);
+  };
+
   return (
-    <ul>
-      <li>
-        <button>Google</button>
-      </li>
-      <li>
-        <button>Github</button>
-      </li>
-    </ul>
+    <section>
+      <Header />
+      <section>
+        <h2>Login</h2>
+        <ul>
+          <li>
+            <button onClick={onLogin}>Google</button>
+          </li>
+          <li>
+            <button onClick={onLogin}>Github</button>
+          </li>
+        </ul>
+      </section>
+      <Footer />
+    </section>
   );
-}
+};
 
 export default Login;
