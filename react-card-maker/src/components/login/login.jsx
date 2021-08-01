@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import styles from "./login.module.css";
 
 const Login = ({ authService }) => {
   const onLogin = (event) => {
@@ -8,16 +9,20 @@ const Login = ({ authService }) => {
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <Header />
       <section>
         <h2>Login</h2>
-        <ul>
-          <li>
-            <button onClick={onLogin}>Google</button>
+        <ul className={styles.ul}>
+          <li className={styles.li}>
+            <button className={styles.button} onClick={onLogin}>
+              Google
+            </button>
           </li>
-          <li>
-            <button onClick={onLogin}>Github</button>
+          <li className={styles.li}>
+            <button className={styles.button} onClick={onLogin}>
+              Github
+            </button>
           </li>
         </ul>
       </section>
