@@ -21,3 +21,9 @@ body {
 ul {
   list-style: none;
 }
+
+@media screen and (max-width: 46rem) {
+  .content {
+    flex-direction: column;
+  }
+}
