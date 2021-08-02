@@ -1,6 +1,7 @@
 @value makerGreen, makerWhite from "../../common/colors.css";
 
 .header {
+  padding: 0.4em;
   position: relative;
   width: 100%;
   background-color: makerGreen;

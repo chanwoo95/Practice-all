@@ -1,5 +1,9 @@
+@value makerBlack, makerWhite from '../../common/colors.css';
+
 .section {
   text-align: center;
+  border: 1px solid makerBlack;
+  background-color: makerWhite;
 }
 
 .ul {
