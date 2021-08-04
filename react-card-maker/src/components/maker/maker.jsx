@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Editor from "../editor/editor";
 import Footer from "../footer/footer";
 import Header from "../header/header";
@@ -6,8 +7,10 @@ import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 
 function Maker() {
+  const history = useHistory();
+
   const onLogout = () => {
-    console.log("logout..");
+    history.push("/");
   };
 
   return (
