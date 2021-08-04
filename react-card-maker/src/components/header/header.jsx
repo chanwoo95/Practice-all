@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./header.module.css";
 
-function Header() {
+function Header({ onLogout }) {
   return (
     <header className={styles.header}>
-      {true && <button className={styles.logout}>Logout</button>}
+      {onLogout && <button className={styles.logout}>Logout</button>}
       <img className={styles.logo} src="/images/logo.png" alt="logo" />
       <h1 className={styles.title}>Business card maker</h1>
     </header>

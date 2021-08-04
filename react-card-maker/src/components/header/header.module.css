@@ -1,6 +1,7 @@
-@value makerGreen, makerWhite from "../../common/colors.css";
+@value makerGreen, makerWhite, makerBlack, makerWheat from "../../common/colors.css";
 
 .header {
+  text-align: center;
   padding: 0.4em;
   position: relative;
   width: 100%;
@@ -19,6 +20,19 @@
 
 .logout {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3em;
+  right: 1em;
+  padding: 0.8em;
+  outline: 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: makerBlack;
+  color: makerWhite;
+  transition: all 0.2s;
+}
+
+.logout:hover {
+  background-color: makerWheat;
+  color: makerBlack;
 }
