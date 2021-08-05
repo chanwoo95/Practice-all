@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./editor.module.css";
 
 function Editor() {
-  return <h2>Editor</h2>;
+  return <section className={styles.editor}>Editor</section>;
 }
 
 export default Editor;

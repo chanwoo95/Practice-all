@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./preview.module.css";
 
 function Preview() {
-  return <h2> Preview </h2>;
+  return <section className={styles.preview}> Preview </section>;
 }
 
 export default Preview;
