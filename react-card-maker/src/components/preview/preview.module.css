@@ -1,5 +1,12 @@
+@value makerWhite from '../../common/colors.css';
+
 .preview {
   display: flex;
+  flex-direction: column;
   flex-basis: 50%;
-  background-color: cornflowerblue;
+  background-color: makerWhite;
+}
+
+.title {
+  text-align: center;
 }

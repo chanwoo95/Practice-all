@@ -5,7 +5,7 @@ import styles from "./editor.module.css";
 function Editor({ cards }) {
   return (
     <section className={styles.editor}>
-      <h1>Card Edit</h1>
+      <h1 className={styles.title}>Card Edit</h1>
       <ul>
         {cards.map((card) => (
           <CardEditForm card={card} />

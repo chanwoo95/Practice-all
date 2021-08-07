@@ -5,7 +5,7 @@ import styles from "./preview.module.css";
 function Preview({ cards }) {
   return (
     <section className={styles.preview}>
-      <h1>Card Preview</h1>
+      <h1 className={styles.title}>Card Preview</h1>
       <ul>
         {cards.map((card) => (
           <Card card={card} />

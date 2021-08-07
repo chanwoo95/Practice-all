@@ -1,7 +1,8 @@
 @value makerGrey from './common/colors.css';
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 .app {
