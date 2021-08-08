@@ -1,8 +1,10 @@
+@value makerWhite from '../../common/colors.css';
+
 .editor {
   display: flex;
   flex-direction: column;
   flex-basis: 50%;
-  background-color: pink;
+  background-color: makerWhite;
 }
 
 .title {

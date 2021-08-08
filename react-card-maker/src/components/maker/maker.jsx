@@ -14,20 +14,29 @@ function Maker({ authService }) {
       company: "kakao",
       job: "Frotend Developer",
       email: "cksdndbd@naver.com",
+      message: "asdfasef",
+      theme: "dark",
+      fileURL: "chanwoo.png",
     },
     {
       id: "2",
-      name: "yeojin",
+      name: "chanwoo1",
       company: "naver",
       job: "Backend Developer",
       email: "oks04028@gmail.com",
+      message: "sidjfiajsenifnasidlnf",
+      theme: "pink",
+      fileURL: "chanwoo.png",
     },
     {
       id: "3",
-      name: "nick",
+      name: "chanwoo2",
       company: "google",
       job: "Soft Engineer",
       email: "nickool@gmail.com",
+      message: "zxkncviefjwilejf",
+      theme: "colorful",
+      fileURL: "chanwoo.png",
     },
   ]);
 
@@ -49,6 +58,7 @@ function Maker({ authService }) {
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor cards={cards} />
+        <div className={styles.bar}></div>
         <Preview cards={cards} />
       </div>
       <Footer />

@@ -10,6 +10,18 @@
   color: makerWhite;
 }
 
+.card.dark {
+  background-color: makerBlack;
+}
+
+.card.pink {
+  background-color: makerPink;
+}
+
+.card.colorful {
+  background-color: makerColorful;
+}
+
 .avatar {
   width: 8rem;
   height: 8rem;
