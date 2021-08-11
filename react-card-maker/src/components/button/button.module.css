@@ -1,0 +1,8 @@
+@value makerGreen, makerWhite from '../../common/colors.css';
+
+.delete {
+  width: 100%;
+  cursor: pointer;
+  background-color: makerGreen;
+  color: makerWhite;
+}
