@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../button/button";
 import ImageFileInput from "../image_file_input/image_file_input";
-import styles from "./add_form.module.css";
+import styles from "./card_add_form.module.css";
 
-function AddForm() {
+function CardAddForm() {
   return (
     <form className={styles.form}>
       <input type="text" className={styles.input} placeholder="name" />
@@ -28,4 +28,4 @@ function AddForm() {
   );
 }
 
-export default AddForm;
+export default CardAddForm;
