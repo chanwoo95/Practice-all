@@ -18,35 +18,54 @@ function CardEditForm({ card }) {
       return;
     }
     event.preventDefault();
+
+    const updated = {
+      [event.target.name]: event.target.value,
+    };
   };
 
   const onSubmit = (event) => {};
   return (
     <form ref={formRef} className={styles.form}>
-      <input ref={nameRef} value={name} type="text" className={styles.input} />
+      <input
+        ref={nameRef}
+        value={name}
+        type="text"
+        className={styles.input}
+        onChange={onChange}
+      />
       <input
         ref={companyRef}
         value={company}
         type="text"
         className={styles.input}
+        onChange={onChange}
       />
       <select name="colors" className={styles.select}>
         <option value="dark">Dark</option>
         <option value="pink">Pink</option>
         <option value="colorful">Colorful</option>
       </select>
-      <input ref={jobRef} value={job} type="text" className={styles.input} />
+      <input
+        ref={jobRef}
+        value={job}
+        type="text"
+        className={styles.input}
+        onChange={onChange}
+      />
       <input
         ref={emailRef}
         value={email}
         type="text"
         className={styles.input}
+        onChange={onChange}
       />
       <textarea
         ref={messageRef}
         value={message}
         className={styles.textarea}
         name="text"
+        onChange={onChange}
       ></textarea>
       <div className={styles.fileInput}>
         <ImageFileInput />

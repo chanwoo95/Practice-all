@@ -1,28 +1,73 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "../button/button";
 import ImageFileInput from "../image_file_input/image_file_input";
 import styles from "./card_add_form.module.css";
 
-function CardAddForm() {
+function CardAddForm({ onAdd }) {
+  const formRef = useRef();
+  const nameRef = useRef();
+  const companyRef = useRef();
+  const jobRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const card = {
+      id: Date.now(),
+      name: nameRef.current.value || "",
+      company: companyRef.current.value || "",
+      job: jobRef.current.value || "",
+      email: emailRef.current.value || "",
+      message: messageRef.current.value || "",
+    };
+    formRef.current.reset();
+    onAdd(card);
+  };
   return (
-    <form className={styles.form}>
-      <input type="text" className={styles.input} placeholder="name" />
-      <input type="text" className={styles.input} placeholder="company" />
+    <form ref={formRef} className={styles.form}>
+      <input
+        ref={nameRef}
+        type="text"
+        name="name"
+        className={styles.input}
+        placeholder="name"
+      />
+      <input
+        ref={companyRef}
+        type="text"
+        name="company"
+        className={styles.input}
+        placeholder="company"
+      />
       <select name="colors" className={styles.select}>
         <option value="dark">Dark</option>
         <option value="pink">Pink</option>
         <option value="colorful">Colorful</option>
       </select>
-      <input type="text" className={styles.input} placeholder="job" />
-      <input type="text" className={styles.input} placeholder="email" />
+      <input
+        ref={jobRef}
+        type="text"
+        name="job"
+        className={styles.input}
+        placeholder="job"
+      />
+      <input
+        ref={emailRef}
+        type="text"
+        name="email"
+        className={styles.input}
+        placeholder="email"
+      />
       <textarea
+        ref={messageRef}
         className={styles.textarea}
-        name="text"
+        name="message"
         placeholder="message"
       ></textarea>
       <div className={styles.fileInput}>
         <ImageFileInput />
-        <Button />
+        <Button name="add" onClick={onSubmit} />
       </div>
     </form>
   );
