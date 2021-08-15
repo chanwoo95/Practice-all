@@ -58,10 +58,6 @@ function Maker({ authService }) {
     setCards(updated);
   };
 
-  const updateCard = () => {};
-
-  const deleteCard = () => {};
-
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />

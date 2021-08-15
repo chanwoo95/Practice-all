@@ -41,9 +41,9 @@ function CardAddForm({ onAdd }) {
         placeholder="company"
       />
       <select name="colors" className={styles.select}>
-        <option value="dark">Dark</option>
-        <option value="pink">Pink</option>
-        <option value="colorful">Colorful</option>
+        <option value="dark">dark</option>
+        <option value="pink">pink</option>
+        <option value="colorful">colorful</option>
       </select>
       <input
         ref={jobRef}
@@ -67,7 +67,7 @@ function CardAddForm({ onAdd }) {
       ></textarea>
       <div className={styles.fileInput}>
         <ImageFileInput />
-        <Button name="add" onClick={onSubmit} />
+        <Button name="Add" onClick={onSubmit} />
       </div>
     </form>
   );

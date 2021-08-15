@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./button.module.css";
 
-function Button() {
-  const onClick = (event) => {
-    return console.log(event);
-  };
+function Button({ name, onClick }) {
+  onClick();
   return (
     <button className={styles.delete} onClick={onClick}>
-      Delete
+      {name}
     </button>
   );
 }
