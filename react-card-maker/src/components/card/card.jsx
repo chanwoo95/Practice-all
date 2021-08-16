@@ -5,7 +5,11 @@ function Card({ card }) {
   const { name, company, job, email, message, theme } = card;
   return (
     <li className={`${styles.card} ${getColors(theme)}`}>
-      <img className={styles.avatar} src="/images/default_logo.png" alt="" />
+      <img
+        className={styles.avatar}
+        src="/images/default_logo.png"
+        alt="avatar"
+      />
       <div className={styles.container}>
         <div className={styles.name}>
           <h2>{name}</h2>

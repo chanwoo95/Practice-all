@@ -4,12 +4,13 @@ import Button from "../button/button";
 import styles from "./card_edit_form.module.css";
 
 function CardEditForm({ card }) {
-  const { name, company, job, email, message } = card;
+  const { name, company, job, theme, email, message } = card;
 
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
   const jobRef = useRef();
+  const themeRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
 
@@ -18,10 +19,6 @@ function CardEditForm({ card }) {
       return;
     }
     event.preventDefault();
-
-    const updated = {
-      [event.target.name]: event.target.value,
-    };
   };
 
   const onSubmit = (event) => {};
@@ -41,10 +38,10 @@ function CardEditForm({ card }) {
         className={styles.input}
         onChange={onChange}
       />
-      <select name="colors" className={styles.select}>
-        <option value="dark">Dark</option>
-        <option value="pink">Pink</option>
-        <option value="colorful">Colorful</option>
+      <select ref={themeRef} value={theme} className={styles.select}>
+        <option value="dark">dark</option>
+        <option value="pink">pink</option>
+        <option value="colorful">colorful</option>
       </select>
       <input
         ref={jobRef}

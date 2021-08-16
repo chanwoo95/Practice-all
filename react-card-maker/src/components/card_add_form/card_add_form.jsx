@@ -7,16 +7,19 @@ function CardAddForm({ onAdd }) {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
+  const themeRef = useRef();
   const jobRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
 
   const onSubmit = (event) => {
     event.preventDefault();
+
     const card = {
       id: Date.now(),
       name: nameRef.current.value || "",
       company: companyRef.current.value || "",
+      theme: themeRef.current.value,
       job: jobRef.current.value || "",
       email: emailRef.current.value || "",
       message: messageRef.current.value || "",
@@ -40,7 +43,7 @@ function CardAddForm({ onAdd }) {
         className={styles.input}
         placeholder="company"
       />
-      <select name="colors" className={styles.select}>
+      <select ref={themeRef} name="theme" className={styles.select}>
         <option value="dark">dark</option>
         <option value="pink">pink</option>
         <option value="colorful">colorful</option>
