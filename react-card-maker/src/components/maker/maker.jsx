@@ -7,8 +7,8 @@ import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 
 function Maker({ authService }) {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: "1",
       name: "chanwoo",
       company: "kakao",
@@ -18,7 +18,7 @@ function Maker({ authService }) {
       theme: "dark",
       fileURL: "chanwoo.png",
     },
-    {
+    2: {
       id: "2",
       name: "chanwoo1",
       company: "naver",
@@ -28,7 +28,7 @@ function Maker({ authService }) {
       theme: "pink",
       fileURL: "chanwoo.png",
     },
-    {
+    3: {
       id: "3",
       name: "chanwoo2",
       company: "google",
@@ -38,7 +38,7 @@ function Maker({ authService }) {
       theme: "colorful",
       fileURL: "chanwoo.png",
     },
-  ]);
+  });
 
   const history = useHistory();
   const onLogout = () => {
@@ -58,11 +58,26 @@ function Maker({ authService }) {
     setCards(updated);
   };
 
+  const updateCard = (card) => {
+    const updated = { ...cards };
+    updated[card.id] = card;
+    setCards(updated);
+  };
+
+  const deleteCard = (card) => {
+    console.log(card);
+  };
+
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards} addCard={addCard} />
+        <Editor
+          cards={cards}
+          addCard={addCard}
+          updateCard={updateCard}
+          deleteCard={deleteCard}
+        />
         <div className={styles.bar}></div>
         <Preview cards={cards} />
       </div>

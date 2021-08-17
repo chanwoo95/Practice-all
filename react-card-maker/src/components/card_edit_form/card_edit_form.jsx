@@ -3,7 +3,7 @@ import ImageFileInput from "../image_file_input/image_file_input";
 import Button from "../button/button";
 import styles from "./card_edit_form.module.css";
 
-function CardEditForm({ card }) {
+function CardEditForm({ card, updateCard, deleteCard }) {
   const { name, company, job, theme, email, message } = card;
 
   const formRef = useRef();
@@ -19,6 +19,10 @@ function CardEditForm({ card }) {
       return;
     }
     event.preventDefault();
+    updateCard({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
   };
 
   const onSubmit = (event) => {};
