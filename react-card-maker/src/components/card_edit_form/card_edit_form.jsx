@@ -15,7 +15,7 @@ function CardEditForm({ card, updateCard, deleteCard }) {
   const messageRef = useRef();
 
   const onChange = (event) => {
-    if (event.currentTarget === null) {
+    if (event.currentTarget == null) {
       return;
     }
     event.preventDefault();
@@ -25,11 +25,14 @@ function CardEditForm({ card, updateCard, deleteCard }) {
     });
   };
 
-  const onSubmit = (event) => {};
+  const onSubmit = () => {
+    deleteCard(card);
+  };
   return (
     <form ref={formRef} className={styles.form}>
       <input
         ref={nameRef}
+        name="name"
         value={name}
         type="text"
         className={styles.input}
@@ -42,13 +45,19 @@ function CardEditForm({ card, updateCard, deleteCard }) {
         className={styles.input}
         onChange={onChange}
       />
-      <select ref={themeRef} value={theme} className={styles.select}>
+      <select
+        ref={themeRef}
+        name="theme"
+        value={theme}
+        className={styles.select}
+      >
         <option value="dark">dark</option>
         <option value="pink">pink</option>
         <option value="colorful">colorful</option>
       </select>
       <input
         ref={jobRef}
+        name="job"
         value={job}
         type="text"
         className={styles.input}
@@ -56,6 +65,7 @@ function CardEditForm({ card, updateCard, deleteCard }) {
       />
       <input
         ref={emailRef}
+        name="email"
         value={email}
         type="text"
         className={styles.input}
@@ -65,7 +75,7 @@ function CardEditForm({ card, updateCard, deleteCard }) {
         ref={messageRef}
         value={message}
         className={styles.textarea}
-        name="text"
+        name="message"
         onChange={onChange}
       ></textarea>
       <div className={styles.fileInput}>
