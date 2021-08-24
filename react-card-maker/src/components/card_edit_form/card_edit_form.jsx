@@ -40,6 +40,7 @@ function CardEditForm({ card, updateCard, deleteCard }) {
       />
       <input
         ref={companyRef}
+        name="company"
         value={company}
         type="text"
         className={styles.input}
