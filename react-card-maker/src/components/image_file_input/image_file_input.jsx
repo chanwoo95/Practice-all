@@ -15,6 +15,7 @@ const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
       url: uploaded.url,
     });
   };
+
   return (
     <div className={styles.container}>
       <input
