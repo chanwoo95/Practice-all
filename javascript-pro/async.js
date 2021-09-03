@@ -11,12 +11,12 @@ function dealy(ms) {
 }
 
 async function getApple() {
-  dealy(1000);
+  await dealy(1000);
   return "🍎";
 }
 
 async function getBanana() {
-  dealy(1000);
+  await dealy(1000);
   return "🍌";
 }
 
