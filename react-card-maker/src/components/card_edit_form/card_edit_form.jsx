@@ -3,14 +3,14 @@ import Button from "../button/button";
 import styles from "./card_edit_form.module.css";
 
 function CardEditForm({ FileInput, card, updateCard, deleteCard }) {
-  const { name, company, job, theme, email, message } = card;
-
   const nameRef = useRef();
   const companyRef = useRef();
   const jobRef = useRef();
   const themeRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+
+  const { name, company, job, theme, email, message } = card;
 
   const onFileChange = (file) => {
     updateCard({
@@ -37,11 +37,11 @@ function CardEditForm({ FileInput, card, updateCard, deleteCard }) {
   return (
     <form className={styles.form}>
       <input
-        ref={nameRef}
-        name="name"
-        value={name}
-        type="text"
         className={styles.input}
+        type="text"
+        name="name"
+        ref={nameRef}
+        value={name}
         onChange={onChange}
       />
       <input
@@ -87,7 +87,7 @@ function CardEditForm({ FileInput, card, updateCard, deleteCard }) {
         onChange={onChange}
       ></textarea>
       <div className={styles.fileInput}>
-        <FileInput onFileChange={onFileChange} />
+        <FileInput name={name} onFileChange={onFileChange} />
         <Button name="Delete" onClick={onSubmit} />
       </div>
     </form>
