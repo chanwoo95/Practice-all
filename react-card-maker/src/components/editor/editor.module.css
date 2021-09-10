@@ -1,8 +1,7 @@
 @value makerWhite from '../../common/colors.css';
 
 .editor {
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
   flex-basis: 50%;
   background-color: makerWhite;
 }
