@@ -6,39 +6,10 @@ import Header from "../header/header";
 import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 
-function Maker({ FileInput, authService }) {
-  const [cards, setCards] = useState({
-    1: {
-      id: "1",
-      name: "chanwoo",
-      company: "kakao",
-      job: "Frotend Developer",
-      email: "cksdndbd@naver.com",
-      message: "asdfasef",
-      theme: "dark",
-      fileURL: "chanwoo.png",
-    },
-    2: {
-      id: "2",
-      name: "chanwoo1",
-      company: "naver",
-      job: "Backend Developer",
-      email: "oks04028@gmail.com",
-      message: "sidjfiajsenifnasidlnf",
-      theme: "pink",
-      fileURL: "chanwoo.png",
-    },
-    3: {
-      id: "3",
-      name: "chanwoo2",
-      company: "google",
-      job: "Soft Engineer",
-      email: "nickool@gmail.com",
-      message: "zxkncviefjwilejf",
-      theme: "colorful",
-      fileURL: "chanwoo.png",
-    },
-  });
+function Maker({ FileInput, authService, cardRepository }) {
+  const historyState = useHistory().state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const history = useHistory();
   const onLogout = () => {
@@ -48,6 +19,8 @@ function Maker({ FileInput, authService }) {
   useEffect(() => {
     authService.onAuthChange((user) => {
       if (!user) {
+        setUserId(user.uid);
+      } else {
         history.push("/");
       }
     });
