@@ -18,7 +18,7 @@ function Maker({ FileInput, authService, cardRepository }) {
 
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
         setUserId(user.uid);
       } else {
         history.push("/");
@@ -32,6 +32,7 @@ function Maker({ FileInput, authService, cardRepository }) {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
