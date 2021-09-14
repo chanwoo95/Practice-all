@@ -17,6 +17,15 @@ function Maker({ FileInput, authService, cardRepository }) {
   };
 
   useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    cardRepository.syncCard(userId, (cards) => {
+      setCards(cards);
+    });
+  }, [userId]);
+
+  useEffect(() => {
     authService.onAuthChange((user) => {
       if (user) {
         setUserId(user.uid);
@@ -41,6 +50,7 @@ function Maker({ FileInput, authService, cardRepository }) {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
 
   return (
