@@ -23,7 +23,7 @@ function Maker({ FileInput, authService, cardRepository }) {
     cardRepository.syncCard(userId, (cards) => {
       setCards(cards);
     });
-  }, [userId]);
+  }, [userId, cardRepository]);
 
   useEffect(() => {
     authService.onAuthChange((user) => {

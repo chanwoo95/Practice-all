@@ -1,9 +1,9 @@
-import { firebaseAuth } from "./firebase";
+import { firebaseAuth, githubProvider, googleProvider } from "./firebase";
 
 class AuthService {
   login(providerName) {
-    const provider = new firebase.auth[`${providerName}AuthProvider`]();
-    return firebaseAuth.signInWithPopup(provider);
+    const authProvider = this.getProvider(providerName);
+    return firebaseAuth.signInWithPopup(authProvider);
   }
 
   logout() {
@@ -14,6 +14,17 @@ class AuthService {
     firebaseAuth.onAuthStateChanged((user) => {
       onUserChanged(user);
     });
+  }
+
+  getProvider(providerName) {
+    switch (providerName) {
+      case "Google":
+        return googleProvider;
+      case "Github":
+        return githubProvider;
+      default:
+        throw new Error("undefined provider name");
+    }
   }
 }
 
