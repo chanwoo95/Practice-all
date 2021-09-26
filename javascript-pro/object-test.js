@@ -42,3 +42,33 @@ function multiplyNumeric(obj) {
 }
 multiplyNumeric(menu);
 console.log(menu);
+
+// 객체 복제
+
+const book = {
+  name: "refactoring 2",
+  author: "martin",
+};
+
+const copyBook = {};
+
+for (let key in book) {
+  copyBook[key] = book[key];
+}
+
+console.log(copyBook.name);
+
+// Object assign
+
+const clock = {};
+
+const hour = { hours: "two hours" };
+const minutes = { minutes: "thirty minutes" };
+
+Object.assign(clock, hour, minutes);
+
+console.log(clock);
+
+// --------------------
+
+const value = Object.assign({}, hour, minutes);
