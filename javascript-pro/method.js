@@ -13,3 +13,12 @@ user.sayHi = sayHi();
 user.sayHi;
 
 user.callMyName();
+
+//
+
+function User(color) {
+  this.color = color;
+}
+
+let user = new User("blue");
+console.log(user.color);
