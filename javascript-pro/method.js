@@ -22,3 +22,22 @@ function User(color) {
 
 let user = new User("blue");
 console.log(user.color);
+
+//
+
+let arr = ["This", "is", "a", "book"];
+
+delete arr[0];
+alert(arr.length); // 4
+
+// splice
+
+arr.splice(0, 1);
+alert(arr.length);
+
+// splice 삭제 후 대체
+
+let text = ["Let's", "go", "home"];
+
+text.splice(2, 1, "party");
+console.log(text);
