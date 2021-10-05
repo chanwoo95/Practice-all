@@ -41,3 +41,10 @@ let text = ["Let's", "go", "home"];
 
 text.splice(2, 1, "party");
 console.log(text);
+
+// concat
+
+let arr2 = [1, 2, 3];
+
+arr.concat([4, 5]);
+console.log(arr2);
