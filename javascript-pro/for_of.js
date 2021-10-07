@@ -4,7 +4,7 @@ for (let result of arr) {
   console.log(result);
 }
 
-//
+// p1
 
 function sumSalaries(salaries) {
   let sum = 0;
@@ -23,3 +23,16 @@ let salaries = {
 };
 
 alert(sumSalaries(salaries));
+
+// p2
+
+function count(obj) {
+  return Object.keys(obj).length;
+}
+
+let user = {
+  name: "John",
+  age: 30,
+};
+
+alert(count(user));
