@@ -25,3 +25,13 @@ function makeUser(name, age) {
 
 const user = makeUser("John", 32);
 console.log(user.name);
+
+// 계산된 프로퍼티
+
+const bills = prompt("청구요금", "sandwitch");
+
+const item = {
+  [bills]: 5000,
+};
+
+console.log(item.sandwitch);
